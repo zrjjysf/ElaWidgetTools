@@ -1,0 +1,7 @@
+/home/jojoc/development/binanceShell/ElaWidgetTools/ElaWidgetTools/build/CMakeFiles/ElaWidgetTools.dir
+/home/jojoc/development/binanceShell/ElaWidgetTools/ElaWidgetTools/build/CMakeFiles/edit_cache.dir
+/home/jojoc/development/binanceShell/ElaWidgetTools/ElaWidgetTools/build/CMakeFiles/rebuild_cache.dir
+/home/jojoc/development/binanceShell/ElaWidgetTools/ElaWidgetTools/build/CMakeFiles/list_install_components.dir
+/home/jojoc/development/binanceShell/ElaWidgetTools/ElaWidgetTools/build/CMakeFiles/install.dir
+/home/jojoc/development/binanceShell/ElaWidgetTools/ElaWidgetTools/build/CMakeFiles/install/local.dir
+/home/jojoc/development/binanceShell/ElaWidgetTools/ElaWidgetTools/build/CMakeFiles/install/strip.dir

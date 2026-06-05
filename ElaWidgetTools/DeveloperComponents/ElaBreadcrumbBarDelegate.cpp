@@ -2,6 +2,7 @@
 
 #include <QPainter>
 
+#include "ElaIcon.h"
 #include "ElaTheme.h"
 ElaBreadcrumbBarDelegate::ElaBreadcrumbBarDelegate(QObject* parent)
     : QStyledItemDelegate{parent}
@@ -51,7 +52,7 @@ void ElaBreadcrumbBarDelegate::paint(QPainter* painter, const QStyleOptionViewIt
         iconFont.setPixelSize(painter->font().pixelSize() * 0.785);
         painter->setFont(iconFont);
         itemRect.setX(itemRect.x() - itemRect.width() * 0.36);
-        painter->drawText(itemRect, Qt::AlignCenter, QChar(ElaIconType::AngleRight));
+        painter->drawText(itemRect, Qt::AlignCenter, ElaIcon::toQChar(ElaIconType::AngleRight));
     }
     painter->restore();
 }

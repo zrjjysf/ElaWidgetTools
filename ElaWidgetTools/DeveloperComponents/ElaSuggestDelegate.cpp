@@ -3,6 +3,7 @@
 #include "ElaSuggestBox.h"
 #include "ElaSuggestBoxPrivate.h"
 #include "ElaSuggestModel.h"
+#include "ElaIcon.h"
 #include "ElaTheme.h"
 #include <QPainter>
 #include <QPainterPath>
@@ -68,7 +69,7 @@ void ElaSuggestDelegate::paint(QPainter* painter, const QStyleOptionViewItem& op
         QFont iconFont = QFont("ElaAwesome");
         iconFont.setPixelSize(17);
         painter->setFont(iconFont);
-        painter->drawText(option.rect.x() + 11, option.rect.y() + 26, QChar(suggest->getElaIcon()));
+        painter->drawText(option.rect.x() + 11, option.rect.y() + 26, ElaIcon::toQChar(suggest->getElaIcon()));
     }
     painter->restore();
 }

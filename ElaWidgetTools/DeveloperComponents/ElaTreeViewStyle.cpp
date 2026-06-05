@@ -5,6 +5,7 @@
 #include <QPainterPath>
 #include <QStyleOption>
 
+#include "ElaIcon.h"
 #include "ElaTheme.h"
 ElaTreeViewStyle::ElaTreeViewStyle(QStyle* style)
 {
@@ -76,7 +77,7 @@ void ElaTreeViewStyle::drawPrimitive(PrimitiveElement element, const QStyleOptio
                 iconFont.setPixelSize(17);
                 painter->setFont(iconFont);
                 painter->setPen(ElaThemeColor(_themeMode, BasicText));
-                painter->drawText(indicatorRect, Qt::AlignVCenter | Qt::AlignRight, vopt->state.testFlag(QStyle::State_Open) ? QChar(ElaIconType::AngleDown) : QChar(ElaIconType::AngleRight));
+                painter->drawText(indicatorRect, Qt::AlignVCenter | Qt::AlignRight, vopt->state.testFlag(QStyle::State_Open) ? ElaIcon::toQChar(ElaIconType::AngleDown) : ElaIcon::toQChar(ElaIconType::AngleRight));
                 painter->restore();
             }
         }
@@ -193,7 +194,7 @@ void ElaTreeViewStyle::drawControl(ControlElement element, const QStyleOption* o
                     iconFont.setPixelSize(checkRect.width() * 0.85);
                     painter->setFont(iconFont);
                     painter->setPen(ElaThemeColor(ElaThemeType::Dark, BasicText));
-                    painter->drawText(checkRect, Qt::AlignCenter, QChar(ElaIconType::Check));
+                    painter->drawText(checkRect, Qt::AlignCenter, ElaIcon::toQChar(ElaIconType::Check));
                 }
                 else if (vopt->checkState == Qt::PartiallyChecked)
                 {

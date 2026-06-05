@@ -7,6 +7,7 @@
 #include <QToolButton>
 #include <QtMath>
 
+#include "ElaIcon.h"
 #include "ElaTheme.h"
 #include "ElaToolBar.h"
 ElaToolBarStyle::ElaToolBarStyle(QStyle* style)
@@ -113,7 +114,7 @@ void ElaToolBarStyle::drawControl(ControlElement element, const QStyleOption* op
                 QFont iconFont = QFont("ElaAwesome");
                 iconFont.setPixelSize(18);
                 painter->setFont(iconFont);
-                painter->drawText(bopt->rect, Qt::AlignCenter, QChar(ElaIconType::AngleRight));
+                painter->drawText(bopt->rect, Qt::AlignCenter, ElaIcon::toQChar(ElaIconType::AngleRight));
             }
             else
             {

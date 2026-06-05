@@ -79,7 +79,7 @@ void ElaToolButton::setMenu(ElaMenu* menu)
 
 void ElaToolButton::setElaIcon(ElaIconType::IconName icon)
 {
-    setProperty("ElaIconType", QChar(icon));
+    setProperty("ElaIconType", ElaIcon::toQChar(icon));
     setIcon(ElaIcon::getInstance()->getElaIcon(ElaIconType::Broom, 1));
 }
 

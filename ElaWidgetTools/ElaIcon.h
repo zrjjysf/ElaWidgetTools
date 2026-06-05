@@ -13,6 +13,7 @@ private:
     ~ElaIcon();
 
 public:
+    static QChar toQChar(ElaIconType::IconName awesome) { return QChar(static_cast<char16_t>(awesome)); }
     QIcon getElaIcon(ElaIconType::IconName awesome);
     QIcon getElaIcon(ElaIconType::IconName awesome, QColor iconColor);
     QIcon getElaIcon(ElaIconType::IconName awesome, int pixelSize);

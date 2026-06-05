@@ -3,6 +3,7 @@
 #include "ElaNavigationModel.h"
 #include "ElaNavigationNode.h"
 #include "ElaNavigationView.h"
+#include "ElaIcon.h"
 #include "ElaTheme.h"
 #include <QDebug>
 #include <QPainter>
@@ -206,7 +207,7 @@ void ElaNavigationStyle::drawControl(ControlElement element, const QStyleOption*
                 QFont iconFont = QFont("ElaAwesome");
                 iconFont.setPixelSize(17);
                 painter->setFont(iconFont);
-                painter->drawText(QRect(itemRect.x(), itemRect.y(), _iconAreaWidth, itemRect.height()), Qt::AlignCenter, QChar(node->getAwesome()));
+                painter->drawText(QRect(itemRect.x(), itemRect.y(), _iconAreaWidth, itemRect.height()), Qt::AlignCenter, ElaIcon::toQChar(node->getAwesome()));
                 painter->restore();
             }
 
@@ -266,7 +267,7 @@ void ElaNavigationStyle::drawControl(ControlElement element, const QStyleOption*
                             }
                         }
                         painter->translate(-expandIconRect.x() - (qreal)expandIconRect.width() / 2 + 1, -expandIconRect.y() - (qreal)expandIconRect.height() / 2);
-                        painter->drawText(expandIconRect, Qt::AlignVCenter, QChar(ElaIconType::AngleDown));
+                        painter->drawText(expandIconRect, Qt::AlignVCenter, ElaIcon::toQChar(ElaIconType::AngleDown));
                         painter->restore();
                     }
                     if (node->getIsChildHasKeyPoints())

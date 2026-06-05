@@ -6,6 +6,7 @@
 #include <QPainterPath>
 #include <QPropertyAnimation>
 
+#include "ElaIcon.h"
 #include "ElaTheme.h"
 #include "private/ElaIconButtonPrivate.h"
 Q_PROPERTY_CREATE_Q_CPP(ElaIconButton, int, BorderRadius)
@@ -62,7 +63,7 @@ ElaIconButton::ElaIconButton(ElaIconType::IconName awesome, QWidget* parent)
     iconFont.setPixelSize(15);
     this->setFont(iconFont);
     d->_pAwesome = awesome;
-    this->setText(QChar(awesome));
+    this->setText(ElaIcon::toQChar(awesome));
     connect(this, &ElaIconButton::pIsSelectedChanged, this, [=]() {
         update();
     });
@@ -91,7 +92,7 @@ ElaIconButton::ElaIconButton(ElaIconType::IconName awesome, int pixelSize, QWidg
     iconFont.setPixelSize(pixelSize);
     this->setFont(iconFont);
     d->_pAwesome = awesome;
-    this->setText(QChar(awesome));
+    this->setText(ElaIcon::toQChar(awesome));
     connect(this, &ElaIconButton::pIsSelectedChanged, this, [=]() {
         update();
     });
@@ -120,7 +121,7 @@ ElaIconButton::ElaIconButton(ElaIconType::IconName awesome, int pixelSize, int f
     iconFont.setPixelSize(pixelSize);
     this->setFont(iconFont);
     d->_pAwesome = awesome;
-    this->setText(QChar(awesome));
+    this->setText(ElaIcon::toQChar(awesome));
     this->setFixedSize(fixedWidth, fixedHeight);
     connect(this, &ElaIconButton::pIsSelectedChanged, this, [=]() {
         update();
@@ -138,7 +139,7 @@ void ElaIconButton::setAwesome(ElaIconType::IconName awesome)
 {
     Q_D(ElaIconButton);
     d->_pAwesome = awesome;
-    this->setText(QChar(awesome));
+    this->setText(ElaIcon::toQChar(awesome));
 }
 
 ElaIconType::IconName ElaIconButton::getAwesome() const
@@ -237,7 +238,7 @@ void ElaIconButton::paintEvent(QPaintEvent* event)
         painter.setPen(isEnabled() ? d->_themeMode == ElaThemeType::Light ? underMouse() ? d->_pLightHoverIconColor : d->_pLightIconColor : underMouse() ? d->_pDarkHoverIconColor
                                                                                                                                                          : d->_pDarkIconColor
                                    : ElaThemeColor(d->_themeMode, BasicTextDisable));
-        painter.drawText(rect(), Qt::AlignCenter, QChar(d->_pAwesome));
+        painter.drawText(rect(), Qt::AlignCenter, ElaIcon::toQChar(d->_pAwesome));
     }
     painter.restore();
 }

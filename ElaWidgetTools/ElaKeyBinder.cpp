@@ -1,5 +1,6 @@
 #include "ElaKeyBinder.h"
 #include "ElaContentDialog.h"
+#include "ElaIcon.h"
 #include "ElaKeyBinderContainer.h"
 #include "ElaKeyBinderPrivate.h"
 #include "ElaTheme.h"
@@ -118,7 +119,7 @@ void ElaKeyBinder::paintEvent(QPaintEvent* event)
     painter.setPen(ElaThemeColor(d->_themeMode, BasicText));
     QRect iconRect = rect();
     iconRect.adjust(0, 0, -10, 0);
-    painter.drawText(iconRect, Qt::AlignVCenter | Qt::AlignRight, QChar(ElaIconType::Pencil));
+    painter.drawText(iconRect, Qt::AlignVCenter | Qt::AlignRight, ElaIcon::toQChar(ElaIconType::Pencil));
     painter.restore();
     QLabel::paintEvent(event);
 }

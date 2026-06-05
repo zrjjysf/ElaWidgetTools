@@ -2,17 +2,18 @@
 cmake_policy(SET CMP0087 NEW)
 project(ElaWidgetToolsExample VERSION 0.1 LANGUAGES CXX)
 
-FILE(GLOB ORIGIN *.cpp *.h)
-FILE(GLOB MODELVIEW ModelView/*.h ModelView/*.cpp)
-FILE(GLOB EAXMPLEPAGE ExamplePage/*.h ExamplePage/*.cpp)
-
-source_group(ModelView FILES ${MODELVIEW})
-source_group(ExamplePage FILES ${EAXMPLEPAGE})
-
 set(PROJECT_SOURCES
-    ${ORIGIN}
-    ${MODELVIEW}
-    ${EAXMPLEPAGE}
+    main.cpp
+    mainwindow.cpp
+    mainwindow.h
+    AlphaMainPage.cpp
+    AlphaMainPage.h
+    AlphaUiService.cpp
+    AlphaUiService.h
+    ExamplePage/T_BasePage.cpp
+    ExamplePage/T_BasePage.h
+    ExamplePage/T_About.cpp
+    ExamplePage/T_About.h
 )
 
 if (${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -111,4 +112,3 @@ if (WIN32)
     endif()"
     )
 endif ()
-

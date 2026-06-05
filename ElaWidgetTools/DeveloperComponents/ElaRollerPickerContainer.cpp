@@ -1,4 +1,5 @@
 #include "ElaRollerPickerContainer.h"
+#include "ElaIcon.h"
 #include "ElaRoller.h"
 #include "ElaTheme.h"
 #include <QMouseEvent>
@@ -165,9 +166,9 @@ void ElaRollerPickerContainer::paintEvent(QPaintEvent* event)
         painter.setFont(iconFont);
         painter.setPen(ElaThemeColor(_themeMode, BasicText));
         // 确定
-        painter.drawText(_overButtonRect, Qt::AlignCenter, QChar(ElaIconType::Check));
+        painter.drawText(_overButtonRect, Qt::AlignCenter, ElaIcon::toQChar(ElaIconType::Check));
         // 取消
-        painter.drawText(_cancelButtonRect, Qt::AlignCenter, QChar(ElaIconType::Xmark));
+        painter.drawText(_cancelButtonRect, Qt::AlignCenter, ElaIcon::toQChar(ElaIconType::Xmark));
     }
     painter.restore();
 }

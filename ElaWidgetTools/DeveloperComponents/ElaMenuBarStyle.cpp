@@ -4,6 +4,7 @@
 #include <QPainter>
 #include <QStyleOption>
 
+#include "ElaIcon.h"
 #include "ElaMenuBar.h"
 #include "ElaTheme.h"
 ElaMenuBarStyle::ElaMenuBarStyle(QStyle* style)
@@ -55,7 +56,7 @@ void ElaMenuBarStyle::drawControl(ControlElement element, const QStyleOption* op
             QFont iconFont = QFont("ElaAwesome");
             iconFont.setPixelSize(18);
             painter->setFont(iconFont);
-            painter->drawText(topt->rect, Qt::AlignCenter, QChar(ElaIconType::AngleRight));
+            painter->drawText(topt->rect, Qt::AlignCenter, ElaIcon::toQChar(ElaIconType::AngleRight));
             painter->restore();
         }
         return;

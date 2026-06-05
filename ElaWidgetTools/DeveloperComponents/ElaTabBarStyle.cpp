@@ -5,6 +5,7 @@
 #include <QPainterPath>
 #include <QStyleOption>
 
+#include "ElaIcon.h"
 #include "ElaTheme.h"
 ElaTabBarStyle::ElaTabBarStyle(QStyle* style)
 {
@@ -60,7 +61,7 @@ void ElaTabBarStyle::drawPrimitive(PrimitiveElement pe, const QStyleOption* opt,
         iconFont.setPixelSize(16);
         p->setFont(iconFont);
         p->setPen(ElaThemeColor(_themeMode, BasicText));
-        p->drawText(opt->rect, Qt::AlignCenter, QChar(ElaIconType::Xmark));
+        p->drawText(opt->rect, Qt::AlignCenter, ElaIcon::toQChar(ElaIconType::Xmark));
         p->restore();
         return;
     }

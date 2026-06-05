@@ -3,6 +3,7 @@
 #include <QContextMenuEvent>
 #include <QPainter>
 
+#include "ElaIcon.h"
 #include "ElaTheme.h"
 #include "private/ElaTextPrivate.h"
 ElaText::ElaText(QWidget* parent)
@@ -170,7 +171,7 @@ void ElaText::paintEvent(QPaintEvent* event)
         iconFont.setPixelSize(this->font().pixelSize());
         painter.setFont(iconFont);
         painter.setPen(ElaThemeColor(d->_themeMode, BasicText));
-        painter.drawText(rect(), Qt::AlignCenter, QChar(d->_pElaIcon));
+        painter.drawText(rect(), Qt::AlignCenter, ElaIcon::toQChar(d->_pElaIcon));
         painter.restore();
     }
     else

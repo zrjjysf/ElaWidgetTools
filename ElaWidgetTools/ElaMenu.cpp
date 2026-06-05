@@ -9,6 +9,7 @@
 #include <QVBoxLayout>
 
 #include "DeveloperComponents/ElaMenuStyle.h"
+#include "ElaIcon.h"
 #include "private/ElaMenuPrivate.h"
 ElaMenu::ElaMenu(QWidget* parent)
     : QMenu(parent), d_ptr(new ElaMenuPrivate())
@@ -71,14 +72,14 @@ ElaMenu* ElaMenu::addMenu(ElaIconType::IconName icon, const QString& title)
 {
     ElaMenu* menu = new ElaMenu(title, this);
     QMenu::addAction(menu->menuAction());
-    menu->menuAction()->setProperty("ElaIconType", QChar(icon));
+    menu->menuAction()->setProperty("ElaIconType", ElaIcon::toQChar(icon));
     return menu;
 }
 
 QAction* ElaMenu::addElaIconAction(ElaIconType::IconName icon, const QString& text)
 {
     QAction* action = new QAction(text, this);
-    action->setProperty("ElaIconType", QChar(icon));
+    action->setProperty("ElaIconType", ElaIcon::toQChar(icon));
     QMenu::addAction(action);
     return action;
 }
@@ -87,7 +88,7 @@ QAction* ElaMenu::addElaIconAction(ElaIconType::IconName icon, const QString& te
 {
     QAction* action = new QAction(text, this);
     action->setShortcut(shortcut);
-    action->setProperty("ElaIconType", QChar(icon));
+    action->setProperty("ElaIconType", ElaIcon::toQChar(icon));
     QMenu::addAction(action);
     return action;
 }

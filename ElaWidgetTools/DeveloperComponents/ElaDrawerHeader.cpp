@@ -1,4 +1,5 @@
 #include "ElaDrawerHeader.h"
+#include "ElaIcon.h"
 #include "ElaTheme.h"
 #include <QEvent>
 #include <QMouseEvent>
@@ -142,7 +143,7 @@ void ElaDrawerHeader::paintEvent(QPaintEvent* event)
     painter.translate(expandIconRect.x() + (qreal)expandIconRect.width() / 2 - 2, expandIconRect.y() + (qreal)expandIconRect.height() / 2);
     painter.rotate(_pExpandIconRotate);
     painter.translate(-expandIconRect.x() - (qreal)expandIconRect.width() / 2 + 2, -expandIconRect.y() - (qreal)expandIconRect.height() / 2);
-    painter.drawText(expandIconRect, Qt::AlignVCenter, QChar(ElaIconType::AngleDown));
+    painter.drawText(expandIconRect, Qt::AlignVCenter, ElaIcon::toQChar(ElaIconType::AngleDown));
 
     painter.restore();
 }

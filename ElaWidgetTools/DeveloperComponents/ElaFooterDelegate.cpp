@@ -6,6 +6,7 @@
 
 #include "ElaBaseListView.h"
 #include "ElaFooterModel.h"
+#include "ElaIcon.h"
 #include "ElaNavigationNode.h"
 #include "ElaTheme.h"
 ElaFooterDelegate::ElaFooterDelegate(QObject* parent)
@@ -174,7 +175,7 @@ void ElaFooterDelegate::paint(QPainter* painter, const QStyleOptionViewItem& opt
         QFont iconFont = QFont("ElaAwesome");
         iconFont.setPixelSize(17);
         painter->setFont(iconFont);
-        painter->drawText(QRect(itemRect.x(), itemRect.y(), _iconAreaWidth, itemRect.height()), Qt::AlignCenter, QChar(node->getAwesome()));
+        painter->drawText(QRect(itemRect.x(), itemRect.y(), _iconAreaWidth, itemRect.height()), Qt::AlignCenter, ElaIcon::toQChar(node->getAwesome()));
         painter->restore();
     }
 

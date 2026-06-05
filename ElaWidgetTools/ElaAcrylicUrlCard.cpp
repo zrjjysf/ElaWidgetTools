@@ -5,6 +5,7 @@
 #include <QPainterPath>
 #include <QUrl>
 
+#include "ElaIcon.h"
 #include "ElaTheme.h"
 #include "private/ElaAcrylicUrlCardPrivate.h"
 Q_PROPERTY_CREATE_Q_CPP(ElaAcrylicUrlCard, int, BorderRadius)
@@ -124,6 +125,6 @@ void ElaAcrylicUrlCard::paintEvent(QPaintEvent* event)
     iconFont.setPixelSize(13);
     painter.setFont(iconFont);
     painter.setPen(ElaThemeColor(d->_themeMode, BasicText));
-    painter.drawText(width - 1.5 * iconFont.pixelSize(), height() - iconFont.pixelSize(), QChar(ElaIconType::UpRightFromSquare));
+    painter.drawText(width - 1.5 * iconFont.pixelSize(), height() - iconFont.pixelSize(), ElaIcon::toQChar(ElaIconType::UpRightFromSquare));
     painter.restore();
 }

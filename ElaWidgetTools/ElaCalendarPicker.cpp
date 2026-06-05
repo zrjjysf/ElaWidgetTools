@@ -8,6 +8,7 @@
 #include "ElaCalendar.h"
 #include "ElaCalendarPickerContainer.h"
 #include "ElaCalendarPickerPrivate.h"
+#include "ElaIcon.h"
 #include "ElaTheme.h"
 Q_PROPERTY_CREATE_Q_CPP(ElaCalendarPicker, int, BorderRadius)
 ElaCalendarPicker::ElaCalendarPicker(QWidget* parent)
@@ -77,6 +78,6 @@ void ElaCalendarPicker::paintEvent(QPaintEvent* event)
     QFont iconFont = QFont("ElaAwesome");
     iconFont.setPixelSize(17);
     painter.setFont(iconFont);
-    painter.drawText(QRect(baseRect.right() - 25, 0, 15, height()), Qt::AlignVCenter | Qt::AlignRight, QChar(ElaIconType::CalendarRange));
+    painter.drawText(QRect(baseRect.right() - 25, 0, 15, height()), Qt::AlignVCenter | Qt::AlignRight, ElaIcon::toQChar(ElaIconType::CalendarRange));
     painter.restore();
 }
